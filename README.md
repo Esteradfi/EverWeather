@@ -1,2 +1,2 @@
 # EwerWeather
-Pet-проект прогноза погоды, написанный на React+Redux. Для получения данных используется API OpenWeatherMap.
+Pet-проект прогноза погоды, написанный на React+Redux. В качестве источника данных используется API OpenWeatherMap.
