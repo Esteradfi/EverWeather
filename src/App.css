@@ -7,4 +7,9 @@
   color: #FFFFFF;
   min-height: 94vh;
   background: #3B185F;
+  grid-template-rows: 7em auto 4em;
+}
+
+input {
+  color: black;
 }
