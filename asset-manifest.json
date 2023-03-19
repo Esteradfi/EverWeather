@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/EwerWeather/static/css/main.8c7721ec.css",
-    "main.js": "/EwerWeather/static/js/main.d50fba5c.js",
-    "static/js/787.f3d7924f.chunk.js": "/EwerWeather/static/js/787.f3d7924f.chunk.js",
-    "index.html": "/EwerWeather/index.html",
-    "main.8c7721ec.css.map": "/EwerWeather/static/css/main.8c7721ec.css.map",
-    "main.d50fba5c.js.map": "/EwerWeather/static/js/main.d50fba5c.js.map",
-    "787.f3d7924f.chunk.js.map": "/EwerWeather/static/js/787.f3d7924f.chunk.js.map"
+    "main.css": "/EverWeather/static/css/main.8c7721ec.css",
+    "main.js": "/EverWeather/static/js/main.4434a92f.js",
+    "static/js/787.f3d7924f.chunk.js": "/EverWeather/static/js/787.f3d7924f.chunk.js",
+    "index.html": "/EverWeather/index.html",
+    "main.8c7721ec.css.map": "/EverWeather/static/css/main.8c7721ec.css.map",
+    "main.4434a92f.js.map": "/EverWeather/static/js/main.4434a92f.js.map",
+    "787.f3d7924f.chunk.js.map": "/EverWeather/static/js/787.f3d7924f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8c7721ec.css",
-    "static/js/main.d50fba5c.js"
+    "static/js/main.4434a92f.js"
   ]
 }
