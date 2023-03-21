@@ -84,6 +84,7 @@ export const getCurrentWeatherByCoordinates = (lat, lon) => {
 }
 
 export const getCoordnitatesByName = (cityName) => {
+    if (!cityName) cityName = "Санкт-Петербург";
     return (dispatch) => {
         forecastAPI.getCoordinates(cityName).then(data => {
             if (data === undefined) {

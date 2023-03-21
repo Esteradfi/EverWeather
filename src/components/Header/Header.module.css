@@ -43,5 +43,9 @@ input:active, input:hover, input:focus {
 @media screen and (max-width: 414px) {
     .searchButton {
         width: 100%;
+        font-size: 16px;
+    }
+    input {
+        font-size: 14px;
     }
 }
