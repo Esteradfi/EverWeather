@@ -1,0 +1,23 @@
+.developer {
+    margin-bottom: 10px;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerLinks a {
+    transition: 0.3s ease;
+}
+
+.footerLinks a:hover {
+    color: #C060A1;
+    transition: 0.3s ease;
+}
+
+@media screen and (max-width: 414px) {
+    .footer {
+        font-size: 14px;
+    }
+}

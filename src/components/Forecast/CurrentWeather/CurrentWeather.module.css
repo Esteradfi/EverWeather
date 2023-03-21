@@ -1,0 +1,34 @@
+.cityName {
+    font-size: 24px;
+}
+
+.mainWeather {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.otherWeather {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.otherWeatherItem {
+    margin: 0 20px;
+}
+
+.otherWeatherItemSpan {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 414px) {
+    .cityName {
+        font-size: 20px;
+    }
+    .mainWeather {
+        font-size: 16px;
+    }
+    .otherWeather {
+        font-size: 14px;
+    }
+}

@@ -1,9 +1,11 @@
+import styles from "./Footer.module.css";
+
 const Footer = (props) => {
     return (
-        <div className="object-bottom">
-            <div className="grid grid-cols-2">
-                <div>Иван Лысков</div>
-                <div className="grid grid-cols-3">
+        <footer className={styles.footer + " object-bottom"}>
+            <div>
+                <div className={styles.developer}>Иван Лысков</div>
+                <div className={styles.footerLinks}>
                     <a target="_blank" href="https://github.com/Esteradfi">
                         GitHub
                     </a>
@@ -15,7 +17,7 @@ const Footer = (props) => {
                     </a>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
 

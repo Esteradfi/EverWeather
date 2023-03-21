@@ -1,7 +1,7 @@
 const FutureWeather = (props) => {
     return (
         <div>
-            Будущая погода
+
         </div>
     );
 }

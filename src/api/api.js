@@ -15,14 +15,14 @@ export const forecastAPI = {
             });
     },
     getCurrentWeather(lat, lon) {
-        return instance.get(`data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
+        return instance.get(`data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}&lang=ru`)
             .then(response => {
                 console.log(response.data);
                 return response.data;
             });
     },
     getFutureWeather(lat, lon) {
-        return instance.get(`data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+        return instance.get(`data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}&lang=ru`)
             .then(response => {
                 console.log(response.data.list);
                 return response.data.list;

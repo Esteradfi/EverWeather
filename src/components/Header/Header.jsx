@@ -1,16 +1,18 @@
+import {useDispatch, useSelector} from "react-redux";
+import {setSearchName, updateCityName} from "../../redux/current-weather-reducer";
 import {useEffect} from "react";
 import {forecastAPI} from "../../api/api";
-import {useDispatch, useSelector} from "react-redux";
-import {setNewCityName, updateCityName} from "../../redux/city-name-reducer";
+import styles from "./Header.module.css";
 
 const Header = (props) => {
-    const city = useSelector(state => state.cityName.name);
+/*    const city = useSelector(state => state.currentWeather.name);*/
     const dispatch = useDispatch();
 
-    let newCityName = useSelector(state => state.cityName.newCityName);
+    let newCityName = useSelector(state => state.currentWeather.newCityName);
 
     let clickNewCityName = () => {
-        dispatch(setNewCityName());
+        dispatch(setSearchName());
+
     }
     let onNewCityNameChange = (e) => {
         let cityName = e.target.value;
@@ -21,29 +23,21 @@ const Header = (props) => {
 
     //Должен отметить, что надо будет сделать поиск погоды не через ограниченный список городов, как я
     //изначально хотел, а через input, так как OWA хорошо находит города
-/*    useEffect(() => {
-        forecastAPI.getCoordinates('москва');
-    })
 
-    useEffect(() => {
-        forecastAPI.getCurrentWeather(60, 30);
-    })
-
-    useEffect(() => {
+  /*  useEffect(() => {
         forecastAPI.getFutureWeather(60, 30);
     })*/
 
     return (
-        <div>
+        <header>
             <div>
                 <input type="text"
                        placeholder="Введите название города"
                        value={newCityName}
                        onChange={onNewCityNameChange}/>
-                <button type="button" onClick={clickNewCityName}>Найти</button>
+                <button className={styles.searchButton} type="button" onClick={clickNewCityName}>Найти</button>
             </div>
-            <h2>{city}</h2>
-        </div>
+        </header>
     );
 }
 
