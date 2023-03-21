@@ -5,6 +5,7 @@ const SET_NEW_CITY_NAME = "ACCEPT_NEW_CITY_NAME";
 const SET_SEARCH_NAME = "SET_SEARCH_NAME";
 const SET_COORDINATES = "SET_COORDINATES";
 const SET_CURRENT_INFO = "SET_CURRENT_INFO";
+const SET_FORECAST_INFO = "SET_FORECAST_INFO";
 const NOT_FOUND_NAME = "NOT_FOUND_NAME";
 
 let initialState = {
@@ -12,13 +13,13 @@ let initialState = {
     searchName: "Санкт-Петербург",
     newCityName: "",
     isEmpty: true,
-    currentWeather : {}
+    currentWeather: {},
+    forecastWeather: [],
 };
 
-const currentWeatherReducer = (state = initialState, action) => {
+const weatherReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_CITY_NAME:
-            console.log(state);
             return {
                 ...state,
                 newCityName: action.newName,
@@ -58,6 +59,13 @@ const currentWeatherReducer = (state = initialState, action) => {
                 isEmpty: false,
                 currentWeather: action.info,
             }
+        case SET_FORECAST_INFO:
+            let sliceInfo = action.info.slice(1);
+            return {
+                ...state,
+                //isEmpty: false,
+                forecastWeather: sliceInfo,
+            }
         default:
             return state;
     }
@@ -75,10 +83,20 @@ export const setCoordinates = (lat, lon) => ({type: SET_COORDINATES, lat, lon});
 
 export const setCurrentInfo = (info) => ({type: SET_CURRENT_INFO, info});
 
+export const setForecastInfo = (info) => ({type: SET_FORECAST_INFO, info});
+
 export const getCurrentWeatherByCoordinates = (lat, lon) => {
     return (dispatch) => {
         forecastAPI.getCurrentWeather(lat, lon).then(data => {
             dispatch(setCurrentInfo(data));
+        })
+    }
+}
+
+export const getForecastWeatherByCoordinates = (lat, lon) => {
+    return (dispatch) => {
+        forecastAPI.getFutureWeather(lat, lon).then(data => {
+            dispatch(setForecastInfo(data));
         })
     }
 }
@@ -93,12 +111,18 @@ export const getCoordnitatesByName = (cityName) => {
                 dispatch(notFoundName());
             } else {
                 dispatch(setCoordinates(data.lat, data.lon));
-                dispatch(updateCityName(data.local_names.ru));
+                if (data.local_names === undefined) {
+                    dispatch(updateCityName(data.name));
+                } else {
+                    dispatch(updateCityName(data.local_names.ru));
+                }
                 dispatch(setNewCityName());
+
                 dispatch(getCurrentWeatherByCoordinates(data.lat, data.lon));
+                dispatch(getForecastWeatherByCoordinates(data.lat, data.lon));
             }
         });
     }
 }
 
-export default currentWeatherReducer;
+export default weatherReducer;

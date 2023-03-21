@@ -1,5 +1,10 @@
+.currentWeather {
+    margin-bottom: 30px;
+}
+
 .cityName {
     font-size: 24px;
+    font-weight: bold;
 }
 
 .mainWeather {

@@ -1,0 +1,14 @@
+.forecastTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.futureWeather {
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 414px) {
+    .forecastTitle {
+        font-size: 20px;
+    }
+}
