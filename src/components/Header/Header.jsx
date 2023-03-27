@@ -1,3 +1,4 @@
+import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setSearchName, updateCityName} from "../../redux/weather-reducer";
 import styles from "./Header.module.css";
@@ -7,9 +8,12 @@ const Header = (props) => {
 
     let newCityName = useSelector(state => state.weather.newCityName);
 
+    //Создаём ref для удаления фокуса с поиска после нажатия enter
+    let searchInput = React.createRef();
+
     //Устанавка нового населённого пункта
     let clickNewCityName = () => {
-        dispatch(setSearchName());
+        if (newCityName !== "") dispatch(setSearchName());
     }
 
     //Изменение значения input
@@ -20,8 +24,9 @@ const Header = (props) => {
 
     //Установка нового населённого пункта по нажатию на Enter
     let onKeyDownCityName = (e) => {
-        if (e.keyCode === 13 && newCityName !== "") {
+        if (e.keyCode === 13) {
             clickNewCityName();
+            searchInput.current.blur();
         }
     }
 
@@ -30,6 +35,7 @@ const Header = (props) => {
             <div>
                 <input type="text"
                        placeholder="Введите название города"
+                       ref={searchInput}
                        onKeyDown={onKeyDownCityName}
                        value={newCityName}
                        onChange={onNewCityNameChange}/>

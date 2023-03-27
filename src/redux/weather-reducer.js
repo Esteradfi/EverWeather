@@ -6,7 +6,6 @@ const SET_SEARCH_NAME = "SET_SEARCH_NAME";
 const SET_COORDINATES = "SET_COORDINATES";
 const SET_CURRENT_INFO = "SET_CURRENT_INFO";
 const SET_FORECAST_INFO = "SET_FORECAST_INFO";
-const NOT_FOUND_NAME = "NOT_FOUND_NAME";
 
 let initialState = {
     name: "Санкт-Петербург",
@@ -28,14 +27,8 @@ const weatherReducer = (state = initialState, action) => {
             let newSearchName = state.newCityName;
             return {
                 ...state,
-                isEmpty: true,
                 searchName: newSearchName,
                 newCityName: "",
-            }
-        case NOT_FOUND_NAME:
-            return {
-                ...state,
-                isEmpty: false,
             }
         case SET_NEW_CITY_NAME:
             let newName = state.newCityName;
@@ -63,7 +56,6 @@ const weatherReducer = (state = initialState, action) => {
             let sliceInfo = action.info.slice(1);
             return {
                 ...state,
-                //isEmpty: false,
                 forecastWeather: sliceInfo,
             }
         default:
@@ -76,8 +68,6 @@ export const updateCityName = (cityName) => ({type: UPDATE_CITY_NAME, newName: c
 export const setSearchName = () => ({type: SET_SEARCH_NAME});
 
 export const setNewCityName = () => ({type: SET_NEW_CITY_NAME});
-
-export const notFoundName = () => ({type: NOT_FOUND_NAME});
 
 export const setCoordinates = (lat, lon) => ({type: SET_COORDINATES, lat, lon});
 
@@ -109,7 +99,6 @@ export const getCoordnitatesByName = (cityName) => {
             if (data === undefined) {
                 dispatch(updateCityName("Oops..."));
                 dispatch(setNewCityName());
-                dispatch(notFoundName());
             } else {
                 dispatch(setCoordinates(data.lat, data.lon));
                 if (data.local_names === undefined) {
