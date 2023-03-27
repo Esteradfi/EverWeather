@@ -8,6 +8,7 @@ const FutureWeather = (props) => {
     const isEmpty = useSelector(state => state.weather.isEmpty);
     const city = useSelector(state => state.weather.name);
 
+    //Вывод прогноза погоды с интервалом три часа
     let forecastElements = forecast.map(el => <ForecastElement key={el.dt} forecast={el}/>);
 
     return (

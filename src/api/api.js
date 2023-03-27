@@ -7,18 +7,21 @@ const instance = axios.create({
 });
 
 export const forecastAPI = {
+    //Получение координат по названию нас. пункта
     getCoordinates(cityName) {
         return instance.get(`geo/1.0/direct?q=${cityName}&appid=${API_KEY}`)
             .then(response => {
                 return response.data[0];
             });
     },
+    //Получение текущей погоды в нас. пункте по координатам
     getCurrentWeather(lat, lon) {
         return instance.get(`data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}&lang=ru`)
             .then(response => {
                 return response.data;
             });
     },
+    //Получние прогноза погоды в выбранном нас. пункте на 5 дней с интервалом три часа
     getFutureWeather(lat, lon) {
         return instance.get(`data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}&lang=ru`)
             .then(response => {

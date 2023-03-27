@@ -2,6 +2,8 @@ import styles from "./ForecastElement.module.css";
 
 const ForecastElement = (props) => {
     const forecast = props.forecast;
+
+    //Описание погоды (делаем первую букву описания заглавной)
     const description = forecast.weather[0].description.charAt(0).toUpperCase() + forecast.weather[0].description.slice(1);
     function getMonthText(month) {
         switch (month) {

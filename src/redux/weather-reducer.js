@@ -85,6 +85,7 @@ export const setCurrentInfo = (info) => ({type: SET_CURRENT_INFO, info});
 
 export const setForecastInfo = (info) => ({type: SET_FORECAST_INFO, info});
 
+
 export const getCurrentWeatherByCoordinates = (lat, lon) => {
     return (dispatch) => {
         forecastAPI.getCurrentWeather(lat, lon).then(data => {
