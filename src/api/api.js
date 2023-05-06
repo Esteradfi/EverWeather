@@ -29,3 +29,12 @@ export const forecastAPI = {
             });
     }
 }
+
+let data = {
+    "grant_type" : "client_credentials",
+    "client_id" : "EteBxekTjObZQ7uYZ16utaKTXHHChE3S",
+    "client_secret" : "DJiuBhzqxyQTxRK3xKGbjgWDIMJ9OSAS",
+}
+
+axios.post('https://api.edu.cdek.ru/v2/oauth/token', data, {headers: {withCredentials: true ,"Access-Control-Allow-Origin": "*", "Content-type": "application/json",
+        "Accept": "application/json"}}).then(res => console.log(res));
