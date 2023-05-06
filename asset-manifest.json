@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/EverWeather/static/css/main.15883878.css",
-    "main.js": "/EverWeather/static/js/main.56c490e3.js",
+    "main.js": "/EverWeather/static/js/main.9b42a315.js",
     "static/js/787.696e48f2.chunk.js": "/EverWeather/static/js/787.696e48f2.chunk.js",
     "static/media/logo.png": "/EverWeather/static/media/logo.b24d14165a3b35cc4bc0.png",
-    "static/media/preloader.svg": "/EverWeather/static/media/preloader.e3b24c827e518f067d688bc48f6f237f.svg",
     "index.html": "/EverWeather/index.html",
+    "static/media/preloader.svg": "/EverWeather/static/media/preloader.e3b24c827e518f067d688bc48f6f237f.svg",
     "main.15883878.css.map": "/EverWeather/static/css/main.15883878.css.map",
-    "main.56c490e3.js.map": "/EverWeather/static/js/main.56c490e3.js.map",
+    "main.9b42a315.js.map": "/EverWeather/static/js/main.9b42a315.js.map",
     "787.696e48f2.chunk.js.map": "/EverWeather/static/js/787.696e48f2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.15883878.css",
-    "static/js/main.56c490e3.js"
+    "static/js/main.9b42a315.js"
   ]
 }
